@@ -7,4 +7,5 @@ router.register('travel-packages', TravelPackageViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),
+    path('chatbot/', ChatbotView.as_view(), name='chatbot'),
 ]
