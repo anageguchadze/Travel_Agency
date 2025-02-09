@@ -39,8 +39,9 @@ class CustomUser(AbstractBaseUser):
     first_name = models.CharField(max_length=50, blank=True)
     last_name = models.CharField(max_length=50, blank=True)
     date_joined = models.DateTimeField(default=timezone.now)
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)  # Required for admin access
+    is_active = models.BooleanField(default=True)  # Initially set to False
+    is_verified = models.BooleanField(default=True)  # This will be used for email verification
+    is_staff = models.BooleanField(default=False)
 
     objects = CustomUserManager()
 
